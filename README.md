@@ -51,6 +51,25 @@ By building Ripley, I’m acknowledging that intentions (even Google’s or Anth
 
 ---
 
+## 🛠️ How it works
+
+The project relies on two core components:
+1. **The Manifest (`.json`):** Defines the sandbox boundaries, imports a standalone Node.js runtime, and denies access to your home directory.
+2. **The Wrapper (`.sh`):** A small script inside the bunker that detects if you want a quick answer or a full interactive conversation.
+
+## Installation & Build
+
+### 1. Prepare your environment
+Ensure you have `flatpak` and `flatpak-builder` installed on your host.
+
+### 2. Build the Bunker
+From the project root, run:
+```bash
+flatpak-builder --user --install --force-clean build net.popos.GeminiCLI.json
+```
+
+---
+
 ## 🛠️ Current Status
 *Ripley* was initially developed and battle-tested with **Gemini CLI**. Work is ongoing to adapt manifest templates for *Claude Code* and other emerging tools.
 
@@ -59,14 +78,12 @@ By building Ripley, I’m acknowledging that intentions (even Google’s or Anth
 git clone [https://github.com/YOUR_USERNAME/ripley-sandbox.git](https://github.com/YOUR_USERNAME/ripley-sandbox.git)
 cd ripley-sandbox
 ```
-### 2. Build and Install (Gemini CLI example)
-```bash
-flatpak-builder --user --install --force-clean build net.popos.GeminiCLI.json
-```
-### 3. Set your API Key
+
+### 2. Set your API Key
 ```bash
 flatpak override --user --env=GEMINI_API_KEY=YOUR_AIza_KEY_HERE net.popos.GeminiCLI
 ```
+
 ---
 
 ## Usage
@@ -79,6 +96,8 @@ flatpak run net.popos.GeminiCLI "Explain this code snippet"
 # Launches the AI in a persistent session inside the bunker
 flatpak run net.popos.GeminiCLI
 ```
+
+---
 
 
 📜 License
