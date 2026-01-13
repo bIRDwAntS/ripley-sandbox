@@ -70,6 +70,24 @@ flatpak-builder --user --install --force-clean build net.popos.GeminiCLI.json
 
 ---
 
+## 🛠️ Critical Setup (The Ripley Hack)
+
+Because of unpredictable checksum issues with remote Node.js downloads during Flatpak builds, this project requires a **manual source import**. This ensures the integrity of the "Bunker" and prevents build crashes.
+
+### 1. Download the Node.js binary
+Go to [nodejs.org](https://nodejs.org/dist/v20.11.0/) and download the following archive:
+`node-v20.11.0-linux-x64.tar.xz`
+
+### 2. Place it in the project root
+Move the downloaded `.tar.xz` file into the `ripley-sandbox` folder.
+
+### 3. Build the Bunker
+Now you can safely run the build command:
+```bash
+flatpak-builder --user --install --force-clean build net.popos.GeminiCLI.json
+```
+---
+
 ## 🛠️ Current Status
 *Ripley* was initially developed and battle-tested with **Gemini CLI**. Work is ongoing to adapt manifest templates for *Claude Code* and other emerging tools.
 
