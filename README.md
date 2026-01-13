@@ -58,26 +58,28 @@ By building Ripley, I’m acknowledging that intentions (even Google’s or Anth
 ```bash
 git clone [https://github.com/YOUR_USERNAME/ripley-sandbox.git](https://github.com/YOUR_USERNAME/ripley-sandbox.git)
 cd ripley-sandbox
-
+```
 ### 2. Build and Install (Gemini CLI example)
 ```bash
 flatpak-builder --user --install --force-clean build net.popos.GeminiCLI.json
-
+```
 ### 3. Set your API Key
 ```bash
 flatpak override --user --env=GEMINI_API_KEY=YOUR_AIza_KEY_HERE net.popos.GeminiCLI
-
+```
 ---
 
 ## Usage
 ### One-shot mode (Surgical)
 ```bash
 flatpak run net.popos.GeminiCLI "Explain this code snippet"
-
+```
 ### Interactive mode (Conversation)
 ```bash
 # Launches the AI in a persistent session inside the bunker
 flatpak run net.popos.GeminiCLI
+```
+
 
 📜 License
 
